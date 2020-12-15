@@ -35,4 +35,4 @@ for line in range(0, len(calls)):
     if calls[line][1] not in numbers:
         numbers.append(calls[line][1])
 
-print(f"There are {len(numbers)} different telephone numbers in the records.")
+print("There are {length_of_numbers} different telephone numbers in the records.".format(length_of_numbers=len(numbers)))

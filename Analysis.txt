@@ -1,62 +1,32 @@
-—TASK0
-
-Worst case time complexity is:
-O(1)
-
-Reason:
-We access only the first and the last values which take constant time now matter how big the file is.
+﻿* TASK0
+   * Worst case time complexity is: O(1)
+   * Algorithm:
+      * We access only the first and the last values which take constant time now matter how big the file is: O(1)
 
 
-—TASK1
-
-Worst case time complexity is:
-O(n) + O(m)
-n = 9072, m = 5213
-
-Reason:
-We loop through all the rows in texts once and all the rows in calls also once.
-
-
-—TASK2
-
-Worst case time complexity is:
-O(n)
-
-n = 5213
-
-Reason: 
-We loop through all rows in calls once.
+* TASK1
+   * Worst case time complexity is: O(n)
+   * Algorithm:
+      * We loop through all the rows in texts once: O(n)
+      * We loop through all the rows in texts once: O(m)
+* TASK2
+   * Worst case time complexity is: O(n)
+   * Algorithm: 
+      * We loop through all rows in calls once: O(n)
 
 
-—TASK3
-
-Worst case time complexity is:
-O(n) + O(n log n) + O(n) 
-O(n log n) (dropping non-dominant terms)
-
-n = 5213
-
-Reason: 
-O(n): Loop through all rows of calls data to create receiver_dict
-
-O(n log n): Sort the keys in receiver dict
-
-O(n): Loop through sorted list to print receiver codes and calculate percentage of Bangalore callers
+* TASK3
+   * Worst case time complexity is: O(n log n)
+   * Algorithm: 
+      * Loop through all rows of calls data to create receiver_dict: O(n)
+      * Sort the keys in receiver dict: O(n log n)
+      * Loop through sorted list to print receiver codes and calculate percentage of         Bangalore callers: O(n)
 
 
-—TASK4
-
-Worst case time complexity is:
-O(n) + O(m) + O(n log n) + O(n)
-O(m) + O(n log n) (dropping non-dominant terms)
-
-Where n = 5213, m=9072
-
-Reason: 
-O(n): Loop through all rows of calls data to create caller and call receiver dict
-
-O(m): Loop through all rows of texts to create sender and text receiver dict
-
-O(n log n): Sort the keys in caller dict
-
-O(n): Loop through sorted list to print potential telemarketers
+* TASK4
+   * Worst case time complexity is: O(n log n)
+   * Algorithm: 
+      * Loop through all rows of calls data to create caller and call receiver dict: O(n)
+      * Loop through all rows of texts to create sender and text receiver dict: O(m)
+      * Sort the keys in caller dict: O(n log n)
+      * Loop through sorted list to print potential telemarketers: O(n)

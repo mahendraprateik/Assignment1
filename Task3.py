@@ -43,6 +43,7 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+import re
 
 def get_recepient_codes(area_code):
   """
@@ -58,10 +59,11 @@ receiver_dict = {}
 for line in range(0, len(calls)):
   if "(080)" in calls[line][0]:
     if "(" in calls[line][1]:
-      if receiver_dict.get(calls[line][1][1:4])==None:
-        receiver_dict[calls[line][1][1:4]] = 1
+      fixed_area_code = re.search('\((.+?)\)', calls[line][1]).group(1)
+      if receiver_dict.get(fixed_area_code)==None:
+        receiver_dict[fixed_area_code] = 1
       else:
-        receiver_dict[calls[line][1][1:4]] += 1
+        receiver_dict[fixed_area_code] += 1
     elif " " in calls[line][1]:
       if receiver_dict.get(calls[line][1][0:4])==None:
         receiver_dict[calls[line][1][0:4]] = 1
