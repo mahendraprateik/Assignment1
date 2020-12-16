@@ -89,4 +89,4 @@ for r in sorted_receivers:
   print(r)
 
 
-print(f"{calls_to_bangalore*100/total_calls} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+print(f"{round(calls_to_bangalore*100/total_calls, 2)} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")

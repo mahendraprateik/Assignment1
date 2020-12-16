@@ -19,20 +19,16 @@ Print a message:
 "There are <count> different telephone numbers in the records."
 """
 # initializing numbers variable
-numbers = [(texts[0][0])]
+unique_tele_nums = set()
 
 # Looping through texts list to read all numbers and append them to numbers
-for line in range(1, len(texts)):
-    if texts[line][0] not in numbers:
-        numbers.append(texts[line][0])
-    if texts[line][1] not in numbers:
-        numbers.append(texts[line][1])
+for call in calls:
+    unique_tele_nums.add(call[0])
+    unique_tele_nums.add(call[1])
 
 # Looping through calls list to read all numbers and add them to numbers
-for line in range(0, len(calls)):
-    if calls[line][0] not in numbers:
-        numbers.append(calls[line][0])
-    if calls[line][1] not in numbers:
-        numbers.append(calls[line][1])
+for text in texts:
+    unique_tele_nums.add(text[0])
+    unique_tele_nums.add(text[1])
 
-print("There are {length_of_numbers} different telephone numbers in the records.".format(length_of_numbers=len(numbers)))
+print("There are {length_of_numbers} different telephone numbers in the records.".format(length_of_numbers=len(unique_tele_nums)))

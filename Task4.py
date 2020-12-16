@@ -25,40 +25,26 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
-#prepare caller dict and receiver dict
-callers_dict = {}
-receivers_dict = {}
+outgoing = set()
+non_tele = set()
 
-for line in range(0, len(calls)):
-    if callers_dict.get(calls[line][0])==None:
-        callers_dict[calls[line][0]] = 1
-    else:
-        pass
-    if receivers_dict.get(calls[line][1])==None:
-        receivers_dict[calls[line][1]] = 1
-    else:
-        pass
+for call in calls:
+    outgoing.add(call[0])
+    non_tele.add(call[1])
 
-#prepare message sender and receiver dict
-sender_dict = {}
-text_receivers_dict = {}
+# similarly populate 'non_tele' with text sender's and receiver's numbers
+# subtract all non_tele number from outgoing
 
-for line in range(0, len(texts)):
-    if sender_dict.get(texts[line][0])==None:
-        sender_dict[texts[line][0]] = 1
-    else:
-        pass
-    if text_receivers_dict.get(texts[line][1])==None:
-        text_receivers_dict[texts[line][1]] = 1
-    else:
-        pass
+for text in texts:
+    non_tele.add(text[0])
+    non_tele.add(text[1])
 
-telemarketers = []
+tele = outgoing.difference(non_tele)
 
-sorted_callers = sorted(callers_dict.keys())
+sorted_callers = sorted(tele)
 
+# display the result line by line in sorted order
 print("These numbers could be telemarketers: ")
 
 for caller in sorted_callers:
-    if (receivers_dict.get(caller) == None) & (sender_dict.get(caller) == None) & (text_receivers_dict.get(caller) == None):
-        print(caller)
+    print(caller)

@@ -5,19 +5,22 @@
 
 
 * TASK1
-   * Worst case time complexity is: O(n)
+   * Worst case time complexity is: O(n^2)
    * Algorithm:
       * We loop through all the rows in texts once: O(n)
+      * We add an element in the set: O(n)
       * We loop through all the rows in texts once: O(m)
+      * We add an element in the set: O(m)
+
 * TASK2
    * Worst case time complexity is: O(n)
-   * Algorithm: 
+   * Algorithm:
       * We loop through all rows in calls once: O(n)
 
 
 * TASK3
    * Worst case time complexity is: O(n log n)
-   * Algorithm: 
+   * Algorithm:
       * Loop through all rows of calls data to create receiver_dict: O(n)
       * Sort the keys in receiver dict: O(n log n)
       * Loop through sorted list to print receiver codes and calculate percentage of         Bangalore callers: O(n)
@@ -25,8 +28,8 @@
 
 * TASK4
    * Worst case time complexity is: O(n log n)
-   * Algorithm: 
-      * Loop through all rows of calls data to create caller and call receiver dict: O(n)
+   * Algorithm:
+      * Loop through all rows of calls data to create caller and call receiver set: O(n)
       * Loop through all rows of texts to create sender and text receiver dict: O(m)
       * Sort the keys in caller dict: O(n log n)
       * Loop through sorted list to print potential telemarketers: O(n)
