@@ -5,12 +5,12 @@
 
 
 * TASK1
-   * Worst case time complexity is: O(n^2)
+   * Worst case time complexity is: O(m)
    * Algorithm:
-      * We loop through all the rows in texts once: O(n)
-      * We add an element in the set: O(n)
+      * We loop through all the rows in calls once: O(n)
+      * We add an element in the set: O(1)
       * We loop through all the rows in texts once: O(m)
-      * We add an element in the set: O(m)
+      * We add an element in the set: O(1)
 
 * TASK2
    * Worst case time complexity is: O(n)
